@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CarService } from '../../services/car.service'
+import { Car } from '../../shared/models/car.model'
+
 @Component({
   selector: 'app-cars',
   templateUrl: './cars.component.html',
@@ -7,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarsComponent implements OnInit {
 
-  constructor() { }
+  cars:Array<Car>;
+
+  constructor(private carService: CarService) {
+
+    this.cars = carService.getCars();
+    
+  }
 
   ngOnInit() {
   }
