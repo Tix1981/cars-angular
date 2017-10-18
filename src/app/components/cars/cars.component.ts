@@ -15,7 +15,7 @@ export class CarsComponent implements OnInit {
   constructor(private carService: CarService) {
 
     this.cars = carService.getCars();
-    
+
   }
 
   ngOnInit() {
