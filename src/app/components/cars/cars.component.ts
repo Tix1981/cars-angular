@@ -21,4 +21,8 @@ export class CarsComponent implements OnInit {
   ngOnInit() {
   }
 
+  showPreview(car) {
+    alert(car.mark + ' ' + car.model + ' ' + car.year + ' ' + car.maxSpeed + ' ' + car.engine + ' ' + car.numberOfDoors);
+  }
+
 }

@@ -22,6 +22,7 @@
       <td *ngIf="!car.isAutomatic">No</td>
       <td>{{ car.engine }}</td>
       <td>{{ car.numberOfDoors }}</td>
+      <td><button class="btn btn-primary" type="button" name="button" (click)="showPreview(car)">Preview</button></td>
     </tr>
   </tbody>
 </table>
