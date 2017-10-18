@@ -1,7 +1,7 @@
 <div class="container">
   <h2>Add new car</h2>
 
-  <form (ngSubmit)="addCar(newCar)">
+  <form #carForm="ngForm" (ngSubmit)="addCar(newCar); carForm.reset()">
     <div class="form-group">
       <label>Mark</label>
       <input [(ngModel)]="newCar.mark" type="text" class="form-control" name="mark"/>
