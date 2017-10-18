@@ -4,25 +4,25 @@
   <form #carForm="ngForm" (ngSubmit)="addCar(newCar); carForm.reset()">
     <div class="form-group">
       <label>Mark</label>
-      <input [(ngModel)]="newCar.mark" type="text" class="form-control" name="mark"/>
+      <input [(ngModel)]="newCar.mark" type="text" class="form-control" name="mark" required minlength="2"/>
     </div>
     <div class="form-group">
       <label>Model</label>
-      <input [(ngModel)]="newCar.model" type="text" class="form-control" name="model"/>
+      <input [(ngModel)]="newCar.model" type="text" class="form-control" name="model" required minlength="2"/>
     </div>
     <div class="form-group">
       <label>Year</label>
-      <select [(ngModel)]="newCar.year" class="form-control" name="year">
+      <select [(ngModel)]="newCar.year" class="form-control" name="year" required>
         <option *ngFor="let num of numbers">{{ num }}</option>
       </select>
     </div>
     <div class="form-group">
       <label>Max Speed</label>
-      <input [(ngModel)]="newCar.maxSpeed" type="number" class="form-control" name="maxSpeed"/>
+      <input [(ngModel)]="newCar.maxSpeed" type="number" class="form-control" name="maxSpeed" min="20" max="300"/>
     </div>
     <div class="form-group">
       <label>Number of Doors</label>
-      <input [(ngModel)]="newCar.numberOfDoors" type="number" class="form-control" name="numberOfDoors"/>
+      <input [(ngModel)]="newCar.numberOfDoors" type="number" class="form-control" name="numberOfDoors" required min="2" max="5"/>
     </div>
     <div class="form-check">
       <label class="form-check-label">
@@ -57,6 +57,6 @@
         </label>
       </div>
     </fieldset>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!carForm.valid">Submit</button>
   </form>
 </div>
